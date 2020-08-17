@@ -13,7 +13,6 @@ public class CollegueDto {
 	@NotBlank
 	private String prenoms;
 	@NotNull
-	@NotBlank
 	private LocalDate dateDeNaissance;
 	@NotNull
 	@NotBlank
