@@ -4,17 +4,16 @@ import java.time.LocalDate;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 public class CollegueDto {
-	@NotNull
 	@NotBlank
 	private String nom;
-	@NotNull
 	@NotBlank
 	private String prenoms;
 	@NotNull
+	@Past
 	private LocalDate dateDeNaissance;
-	@NotNull
 	@NotBlank
 	private String photoUrl;
 
