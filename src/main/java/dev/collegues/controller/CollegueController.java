@@ -60,9 +60,9 @@ public class CollegueController {
 	 * @return : le ou les matricules correspondants
 	 */
 	@GetMapping
-	public ResponseEntity<?> rechercheParNom(@RequestParam("nom") String nom) {
+	public ResponseEntity<?> rechercheParNom(@RequestParam(value="nom", required=false) String nom) {
 		if (nom == null) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Donnez un nom.");
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(collegueService.findAll());
 		} else {
 			return ResponseEntity.status(HttpStatus.OK).body(collegueService.findByNom(nom));
 		}

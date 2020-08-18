@@ -1,9 +1,11 @@
 package dev.collegues.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 import javax.transaction.Transactional;
 
@@ -45,5 +47,8 @@ public class CollegueService {
 		// generation random d'un matricule
 		newCollegue.setMatricule(UUID.randomUUID().toString());
 		return collegueRepo.save(newCollegue);
+	}
+	public List<Collegue> findAll() {
+		return collegueRepo.findAll();
 	}
 }
